@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    
     <title>Danish's Wallet App</title>
 </head>
-<body>
+<body id="body">
     
         
 
@@ -16,9 +17,9 @@
             <div class="taker">
                 <div class="asker">Please Enter Your 3 Digit Login Code</div>
                 <input type="text" placeholder="Login Code"><br>
-                <button class="submit-btn">Submit</button>
-                <div class="unpresent">Don't Have One? <button class="generate-btn">Generate Login Code</button></div>
-                <p class="login-code-demo"></p>
+                <button class="submit-btn" id="submit-btn">Submit</button>
+                <div class="unpresent">Don't Have One? <a class="generate-btn" href="generate_page.html">Generate Login Code</a></div>
+                <div class="js-generate-alert"></div>
             </div>
         </div>
     </div>

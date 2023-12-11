@@ -11,6 +11,7 @@
 body{
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    
 
 }
 .big-wrapper{
@@ -37,7 +38,8 @@ body{
     
 }
 
-.main .header-title {
+ .header-title {
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,12 +116,13 @@ body{
 
 .taker .unpresent {
     font-size: 14px;
-    margin-left: 15%;
+    margin-left: 20%;
+    margin-top: 32%;
 }
 
 .taker .generate-btn{
     background-color: transparent;
-    height: 2.5rem;
+    height: 10rem;
     width: 15vh;
     color: white;
     border: none;
@@ -130,15 +133,24 @@ body{
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
     text-decoration: underline;
-    transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;   
    
 }
 
 .generate-btn:hover{
     height: 2.8rem;
     width: 15.8vh;
-    border: 1px solid white;
-    background-color: white;
-    color: black;
-    font-weight: bold;
+    font-size: 15px;
+    
+    color: pink;
+    
+}
+.upper-body{
+    position: absolute;
+    z-index: 100;
+}
+.generate-alert {
+    height: 100%;
+    width: 100%;
+    background-color: red;
 }

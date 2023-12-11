@@ -27,9 +27,16 @@ function generateLoginCode(){
 //     userData = JSON.parse(localStorage.getItem('code'));
 // }
 
-document.querySelector('.generate-btn')
-    .addEventListener('click', () => {
-        generateLoginCode();
-        document.querySelector('.login-code-demo')
-            .innerHTML = `<p>${userData[0].loginCode}</p>`;
-    })
+// document.querySelector('.generate-btn')
+//     .addEventListener('click', () => {
+        
+//         document.querySelector('.js-generate-alert')
+//             .classList.add('generate-alert');
+        
+//         document.querySelector('.generate-alert')
+//             .innerHTML = `
+            
+//             `;
+//         document.getElementById('body').style.filter = 'blur(0px)';
+//     }
+//   )
