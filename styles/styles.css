@@ -99,8 +99,8 @@ body{
 
 .taker .unpresent{
 
-   display: flex;
-    background-color: red;
+    padding-top: 8px;
+    
     height: 4rem;
     left: 7vh;
     position: relative;
@@ -122,7 +122,9 @@ body{
 }
 
 .taker .generate-btn:hover{
+    text-decoration: none;
     padding: 10px;
+    font-size: 17px;
     border-radius: 10px;
     background-color: white;
     color: red;
