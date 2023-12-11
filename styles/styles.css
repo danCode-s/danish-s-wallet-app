@@ -5,6 +5,8 @@
 
 *{
     font-family: Roboto, Arial;
+    overflow: hidden;
+    
 }
 body{
     background: rgb(63,94,251);
@@ -42,10 +44,55 @@ body{
     
 }
 .taker{
+    margin-top: 10vh;
     margin-left: 20vh;
     justify-content: center;
     color: white;
     align-items: center;
 
+}
+
+.taker .asker{
+    position: absolute;
+    top: 32vh;
+    left: 63vh;
+    padding-left: 5px;
+    font-size: 25px;
+    margin-left: 0px;
+}
+.taker input{
+    text-indent: 12vh;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 3rem;
+    width: 35vh;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.taker .submit-btn{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    height: 2.5rem;
+    width: 10vh;
+    position: relative;
+    left: 12vh;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: all ease-in-out 0.2s;
+}
+
+.taker .submit-btn:hover{
+    left: 11.8vh;
+    border: none;
+    height: 2.8rem;
+    width: 10.5vh;
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.954);
 }
 
