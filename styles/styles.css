@@ -14,16 +14,17 @@ body{
 
 .header-title{ 
     height: 5vh;
+    margin-top: 50px;
     width: 100%;
     color: white;
     font-size: 50px;
     font-weight: bold;
     font-family: 'Bebas Neue', sans-serif;
     word-spacing: 10px;
-    letter-spacing: 2px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 5vh;
+    letter-spacing: 2px;
     padding-bottom: 50px;
     
     
@@ -31,14 +32,20 @@ body{
 .main{
     width: 70vh;
     height: 70vh;
-    
-    margin-left : 50vh;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
     box-shadow: 20px 20px black;
     border: 1px solid black;
+    margin-left : 50vh;
+    border-radius: 20px;
+    margin-top: 10vh;
+    background-color: transparent;
+    justify-content: center;
+    
+}
+.taker{
+    margin-left: 20vh;
+    justify-content: center;
+    color: white;
+    align-items: center;
 
 }
+
