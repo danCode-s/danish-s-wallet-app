@@ -86,6 +86,7 @@ body{
 }
 
 .taker .submit-btn{
+    font-weight: bold;
     background-color: transparent;
     height: 2.5rem;
     width: 8vh;
