@@ -15,7 +15,7 @@ function generateLoginCode(){
     userData[0] = {
         loginCode,
     };
-    
+
 
     // localStorage.setItem('code', JSON.stringify(userData))
     console.log(userData);
@@ -31,5 +31,5 @@ document.querySelector('.generate-btn')
     .addEventListener('click', () => {
         generateLoginCode();
         document.querySelector('.login-code-demo')
-            .innerHTML = `<p>${userData[0]}</p>`;
+            .innerHTML = `<p>${userData[0].loginCode}</p>`;
     })
