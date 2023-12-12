@@ -3,10 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 *{
-    font-family: Roboto, Arial;
+    
     overflow: hidden;
-    box-sizing: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
 
     
 }
@@ -56,17 +61,18 @@ body{
 }
 .taker {
     
-    height: 40%;
-    width: 75%;
+    height: 70%;
+    width: 90%;
     position: relative;
     top: 10%;
     padding-left: 2vh;
-    padding-right: 3vh;
+    padding-right: 0vh;
     padding-top: 5vh;
     padding-bottom: 10vh;
     left: 5%;
     transition: all ease-in-out 0.3s;
     border-radius: 5px;
+    
     
     
    
@@ -129,16 +135,15 @@ body{
     
     background-color: transparent;
     border: none;
-    
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 2px;
-    text-decoration: underline;
     transition: all ease-in-out 0.2s;   
    
 }
 .generate-btn a{
     color: white;
-    transition: all ease-in-out 0.2s;   
+    font-family: 'Bebas Neue', sans-serif;
+    transition: all ease-in-out 0.2s;  
+    letter-spacing: 2px;
+    text-decoration: underline; 
 }
 .generate-btn a:hover{
     color: white;
@@ -149,29 +154,7 @@ body{
   
     
 
-.upper-body{
-    position: absolute;
-    z-index: 100;
-}
-.generate-alert {
-    height: 100%;
-    width: 100%;
-    background-color: red;
-}
 
-.transparent-every, 
-.transparent-every button,
-.transparent-every input{
-    color: transparent;
-    background-color: transparent;
-    border: none;
-}
-
-
-.material-symbols-outlined{
-    color: transparent;
-    
-}
 .arrow-back{
     background-color: red;
     color: white;

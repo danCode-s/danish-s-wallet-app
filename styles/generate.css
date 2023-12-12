@@ -1,0 +1,72 @@
+.upper-body{
+    
+    min-height: 50vh;
+    min-width: 40vh;
+    max-width: 47vh;
+    margin-top: 5%;
+    margin-left: 3%;
+    
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor:default;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    
+}
+.upper-body p span{
+    color: red;
+    font-weight: bold;
+    font-size: 23px;
+    
+}
+
+.upper-body .center-p{
+    text-align: center;
+}
+.upper-body p{
+    font-size: 20px;
+    
+    
+}
+
+.small-wrapper{
+    margin-top: 10%;
+
+}
+
+.first-name{
+    margin-top: 10%;
+    margin-bottom: 4px;
+}
+
+.small-wrapper input{
+    height: 2.5rem;
+    width: 95%;
+    border: 2px solid rgb(26, 26, 26);
+    padding-left: 15px;
+    border-radius: 10px;
+}
+.user-name{
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+.new-generate-btn{
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    margin-top: 5%;
+    border: 1px solid white;
+    background-color: transparent;
+    height: 2.5rem;
+    padding: 10px;
+    margin-left: 15vh;
+    border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+}
+.new-generate-btn:hover{
+    background-color: white;
+    color: black;
+}
