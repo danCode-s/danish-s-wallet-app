@@ -1,4 +1,6 @@
-let userData = [];
+let userData = [
+    
+];
 let allCodes = [];
 
 
@@ -13,20 +15,23 @@ function generateLoginCode(){
 document.querySelector('.new-generate-btn')
 .addEventListener('click', () => {
     const firstName = document.querySelector('.js-name-input').value;
-    const user_name = document.querySelector('.js-user-name-input').value;
+    //const user_name = document.querySelector('.js-user-name-input').value;
     let code;
     if(firstName){
         code = generateLoginCode();
-        allCodes.push(generateLoginCode());
-
+        allCodes.push(code);
+        userData[code] = {
+            firstName: firstName,
+        }
+    
     } else {
         alert('enter valid input')
     }
     console.log(allCodes);
+    console.log(userData);
     
 
     }
-    
     )
 
 
