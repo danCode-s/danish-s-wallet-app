@@ -21,11 +21,6 @@ function generateLoginCode(){
     console.log(userData);
     
 };
-// generateLoginCode();
-
-// function saveLoginCode(){
-//     userData = JSON.parse(localStorage.getItem('code'));
-// }
 
 
 
