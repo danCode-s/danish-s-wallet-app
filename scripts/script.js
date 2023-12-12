@@ -27,16 +27,7 @@ function generateLoginCode(){
 //     userData = JSON.parse(localStorage.getItem('code'));
 // }
 
-document.querySelector('.js-generate-btn').addEventListener('click', function() {
-    const takerElement = document.querySelector('.taker');
-    
-    // Remove the entire 'taker' class
-    takerElement.classList.remove('taker');
-    takerElement.classList.add('transparent-every');
-    document.querySelector('.input-code')
-        .innerHTML=``;
 
-});
 
 
 

@@ -125,31 +125,30 @@ body{
     margin-top: 15%;
 }
 
-.taker .generate-btn{
+.generate-btn{
+    
     background-color: transparent;
-    height: 10rem;
-    width: 15vh;
-    color: white;
     border: none;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all ease-in-out 0.3s;
-    border-radius: 20px;
+    
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
     text-decoration: underline;
     transition: all ease-in-out 0.2s;   
    
 }
-
-.generate-btn:hover{
-    height: 2.8rem;
-    width: 15.8vh;
+.generate-btn a{
+    color: white;
+    transition: all ease-in-out 0.2s;   
+}
+.generate-btn a:hover{
+    color: white;
     font-size: 15px;
-    
     color: pink;
     
 }
+  
+    
+
 .upper-body{
     position: absolute;
     z-index: 100;
@@ -166,4 +165,15 @@ body{
     color: transparent;
     background-color: transparent;
     border: none;
+}
+
+
+.material-symbols-outlined{
+    color: transparent;
+    
+}
+.arrow-back{
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
