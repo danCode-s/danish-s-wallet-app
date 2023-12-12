@@ -23,7 +23,10 @@ document.querySelector('.new-generate-btn')
         userData[code] = {
             firstName: firstName,
         }
-    
+        document.querySelector('.changeable')
+            .innerHTML = `<p class='welcome-msg'>Welcome, ${userData[code].firstName} 👋<br>Your Login Code is <span class="span">${code}</span></p>`;
+        document.querySelector('.new-generate-btn')
+            .innerHTML = `<a href="index.html">Login Page</a>`;
     } else {
         alert('enter valid input')
     }
