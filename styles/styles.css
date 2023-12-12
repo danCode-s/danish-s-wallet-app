@@ -6,6 +6,8 @@
 *{
     font-family: Roboto, Arial;
     overflow: hidden;
+    box-sizing: 0;
+
     
 }
 body{
@@ -15,7 +17,8 @@ body{
 
 }
 .big-wrapper{
-    margin-top: 10%;
+    
+    margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,6 +31,8 @@ body{
     
 }
 .big-wrapper .main{
+    min-height: 60vh;
+    min-width: 50vh;
     height: 50vh;
     width: 50vh;
     border: 1px solid black;
@@ -117,7 +122,7 @@ body{
 .taker .unpresent {
     font-size: 14px;
     margin-left: 20%;
-    margin-top: 32%;
+    margin-top: 15%;
 }
 
 .taker .generate-btn{
@@ -153,4 +158,12 @@ body{
     height: 100%;
     width: 100%;
     background-color: red;
+}
+
+.transparent-every, 
+.transparent-every button,
+.transparent-every input{
+    color: transparent;
+    background-color: transparent;
+    border: none;
 }

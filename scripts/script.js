@@ -27,16 +27,22 @@ function generateLoginCode(){
 //     userData = JSON.parse(localStorage.getItem('code'));
 // }
 
-// document.querySelector('.generate-btn')
-//     .addEventListener('click', () => {
-        
-//         document.querySelector('.js-generate-alert')
-//             .classList.add('generate-alert');
-        
-//         document.querySelector('.generate-alert')
-//             .innerHTML = `
+document.querySelector('.js-generate-btn').addEventListener('click', function() {
+    const takerElement = document.querySelector('.taker');
+    
+    // Remove the entire 'taker' class
+    takerElement.classList.remove('taker');
+    takerElement.classList.add('transparent-every');
+    document.querySelector('.input-code')
+        .innerHTML=``;
+
+});
+
+
+
             
-//             `;
-//         document.getElementById('body').style.filter = 'blur(0px)';
-//     }
-//   )
+            
+
+             
+            
+        
