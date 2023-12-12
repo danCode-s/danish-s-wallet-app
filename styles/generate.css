@@ -82,6 +82,8 @@
 }
 
 .new-generate-btn a{
+    border: none;
+    padding: 10px;
     text-decoration: none;
     color: white;
 }
