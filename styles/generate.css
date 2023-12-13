@@ -91,3 +91,8 @@
 .new-generate-btn a:hover{
     color: black;
 }
+
+.user-name{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
