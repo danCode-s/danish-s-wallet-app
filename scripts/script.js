@@ -6,19 +6,19 @@ let loginCode;
 getSavedData();
 function getSavedData() {
     const savedData = localStorage.getItem('user-data');
-    const savedUsers = localStorage.getItem('all-users');
-    if (savedData && savedUsers) {
+    //const savedUsers = localStorage.getItem('all-users');
+    if (savedData) {
         fullUser = JSON.parse(savedData);
-        allUserNames = JSON.parse(savedUsers);
+        //allUserNames = JSON.parse(savedUsers);
     } else {
         fullUser = {};
-        allUserNames = [];
+        //allUserNames = [];
     }
 };
 
 function saveDataToLocalStorage() {
     localStorage.setItem('user-data', JSON.stringify(fullUser));
-    localStorage.setItem('all-users', JSON.stringify(allUserNames));
+    // localStorage.setItem('all-users', JSON.stringify(allUserNames));
 };
 function generateLoginCode(){
     const randomNumber = Math.random();
@@ -30,30 +30,41 @@ function generateLoginCode(){
 
 function submit(){
     getSavedData();
-    console.log(allUserNames[0]);
+    
     if(document.querySelector('.submit-btn')){
         // console.log(fullUser[allUserNames]);
         document.querySelector('.submit-btn')
          .addEventListener('click', () =>{
                 const enteredCode = document.querySelector('.input-code').value;
                 const enterUserName = document.querySelector('.user-enter').value;
+
                 if (enteredCode && enterUserName){
-                    console.log(fullUser[enterUserName].loginCode);
+                    // console.log(fullUser[enterUserName].loginCode);
                     if (enterUserName in fullUser && fullUser[enterUserName].loginCode === Number(enteredCode)){
                         document.querySelector('.test')
                             .innerHTML = `Welcome, ${fullUser[enterUserName].name} 👋👋`;
-                    } else {
+                    }else if(!(enterUserName in fullUser)){
                         document.querySelector('.test')
-                            .innerHTML = `Invalid Login Code or username Try Again`;
-                    }
+                            .innerHTML = `Username Doesn't Exist`;
+                    } 
+                    else {
+                        
+                        document.querySelector('.test')
+                            .innerHTML = `Invalid Login Code`;
+                    };
 
-                }
+                    document.querySelector('.user-enter').value = ``;
+                    document.querySelector('.input-code').value = ``;
+                    
+                 }else {
+                    alert('Please enter full data')
+                 };
                 
                     
-            })
-        }    
+            });
+        };   
          
-}
+};
 
 
   
@@ -75,9 +86,6 @@ function generate(){
                         name: firstName,
                         loginCode: code,
                     }
-                    allUserNames.push(user_name);
-                    console.log(allUserNames);
-                
                     console.log(fullUser); 
                     
                     saveDataToLocalStorage();
@@ -87,26 +95,41 @@ function generate(){
                         .innerHTML = `<a href="index.html">Login Page</a>`;
                     
                     } else {
-                        document.querySelector('.code-generated')
+                        document.querySelector('.user-alert')
                             .innerHTML = `The Username Already exists try another one`;
+                        document.querySelector('.js-name-input')
+                            .value = ``;
+                        document.querySelector('.js-user-name-input')
+                            .value = ``;
                     };
                 
-            } else {
-                alert('enter valid input')
-            }
+            };
         
             
             
         
     
         });
+    };
+    
+    
+    
+};
+
+function clearPreviousData(){
+    if(document.querySelector('.clear-btn')){
+        document.querySelector('.clear-btn')
+        .addEventListener('click', () => {
+            fullUser = {};
+            console.log(fullUser);
+            saveDataToLocalStorage();
+        })
     }
     
-    
-    
-}
 
+}
 generate();
 submit();   
+clearPreviousData();
             
         
