@@ -1,14 +1,18 @@
 let fullUser;
 let user_name;
 let code;
+let balance = 0.00;
+let enterUserName;
 let allUserNames;
 let loginCode;
 getSavedData();
 function getSavedData() {
     const savedData = localStorage.getItem('user-data');
+    const savedCurrentUser = localStorage.getItem('current-user');
     //const savedUsers = localStorage.getItem('all-users');
-    if (savedData) {
+    if (savedData || enterUserName) {
         fullUser = JSON.parse(savedData);
+        enterUserName = savedCurrentUser;
         //allUserNames = JSON.parse(savedUsers);
     } else {
         fullUser = {};
@@ -36,13 +40,17 @@ function submit(){
         document.querySelector('.submit-btn')
          .addEventListener('click', () =>{
                 const enteredCode = document.querySelector('.input-code').value;
-                const enterUserName = document.querySelector('.user-enter').value;
+                enterUserName = document.querySelector('.user-enter').value;
 
                 if (enteredCode && enterUserName){
                     // console.log(fullUser[enterUserName].loginCode);
                     if (enterUserName in fullUser && fullUser[enterUserName].loginCode === Number(enteredCode)){
                         document.querySelector('.test')
-                            .innerHTML = `Welcome, ${fullUser[enterUserName].name} 👋👋`;
+                            .innerHTML = `<p class="loading"> Loading... <p>`;
+                            localStorage.setItem('current-user', enterUserName);
+                        setTimeout(()=>{
+                            window.location.href = "final_dash.html";
+                        }, 2000);
                     }else if(!(enterUserName in fullUser)){
                         document.querySelector('.test')
                             .innerHTML = `Username Doesn't Exist`;
@@ -67,7 +75,6 @@ function submit(){
 };
 
 
-  
 function generate(){
     getSavedData();
     console.log(fullUser);
@@ -85,6 +92,7 @@ function generate(){
                     fullUser[user_name] = {
                         name: firstName,
                         loginCode: code,
+                        balance: balance
                     }
                     console.log(fullUser); 
                     
@@ -133,3 +141,15 @@ submit();
 clearPreviousData();
             
         
+
+if(document.querySelector('.in-main')){
+    document.querySelector('.in-main')
+        .innerHTML = `
+        <p>Hello, ${fullUser[enterUserName].name}</p>
+        <p>Current Balance</p>
+        <p>$${fullUser[enterUserName].balance + 1.56}
+        
+        <br>
+        <a href="index.html">Log out</button> 
+        `;
+}

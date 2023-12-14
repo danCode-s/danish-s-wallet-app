@@ -1,0 +1,13 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+.in-main{
+    background-color: white;
+    height: 50vh;
+    width: 45vh;
+    margin-left: 5%;
+    margin-top: 5%;
+    color: black
+}
+

@@ -171,3 +171,10 @@ body{
     text-decoration: underline;
     cursor: pointer;
 }
+
+.loading{
+    margin-top: 5%;
+    font-weight: bold;
+    margin-bottom: 5%;
+    text-align: center;
+}
