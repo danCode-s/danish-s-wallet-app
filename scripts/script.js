@@ -1,19 +1,24 @@
 let fullUser;
-getSavedData();
 let user_name;
 let code;
+let allUserNames;
 let loginCode;
+getSavedData();
 function getSavedData() {
     const savedData = localStorage.getItem('user-data');
-    if (savedData) {
-        fullUser = JSON.parse(savedData);
+    const savedUsers = localStorage.getItem('all-users');
+    if (savedData && savedUsers) {
+        fullUsenr = JSON.parse(savedData);
+        allUserNames = JSON.parse(savedUsers);
     } else {
         fullUser = {};
+        allUserNames = [];
     }
 };
 
 function saveDataToLocalStorage() {
     localStorage.setItem('user-data', JSON.stringify(fullUser));
+    localStorage.setItem('all-users', JSON.stringify(allUserNames));
 };
 function generateLoginCode(){
     const randomNumber = Math.random();
@@ -25,19 +30,27 @@ function generateLoginCode(){
 
 function submit(){
     getSavedData();
+    console.log(allUserNames[0]);
     if(document.querySelector('.submit-btn')){
-        console.log(fullUser);
+        // console.log(fullUser[allUserNames]);
         document.querySelector('.submit-btn')
          .addEventListener('click', () =>{
                 const enteredCode = document.querySelector('.input-code').value;
-                for (const key in fullUser[user_name].loginCode){
-                    console.log(key);
-                    if (key === enteredCode){
+                const enterUserName = document.querySelector('.user-name').value;
+                if (enteredCode && enterUserName){
+                    console.log(fullUser[enterUserName].loginCode);
+                    if (enterUserName in fullUser && fullUser[enterUserName].loginCode === Number(enteredCode)){
                         document.querySelector('.test')
-                            .innerHTML = `<p>${enteredCode}</p>`;
-                                    
+                            .innerHTML = `Welcome, ${fullUser[enterUserName].name} 👋👋`;
+                    } else {
+                        document.querySelector('.test')
+                            .innerHTML = ``;
                     }
+
+                } else {
+                    alert('Invalid input')
                 }
+                
                     
             })
         }    
@@ -47,6 +60,8 @@ function submit(){
 
   
 function generate(){
+    getSavedData();
+    console.log(fullUser);
     if(document.querySelector('.small-wrapper')){
         document.querySelector('.new-generate-btn')
             .addEventListener('click', () => {
@@ -57,12 +72,13 @@ function generate(){
             
             if(firstName && user_name){
                 code = generateLoginCode();
-                fullUser = {
-                    [user_name]: {
-                        name: firstName,
-                        loginCode: code,
-                    }
+                fullUser[user_name] = {
+                    name: firstName,
+                    loginCode: code,
                 }
+                allUserNames.push(user_name);
+                console.log(allUserNames);
+            
                 console.log(fullUser); 
                 
                 saveDataToLocalStorage();
