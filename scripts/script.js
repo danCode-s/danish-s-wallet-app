@@ -6,6 +6,8 @@ let enterUserName;
 let allUserNames;
 let loginCode;
 getSavedData();
+
+
 function getSavedData() {
     const savedData = localStorage.getItem('user-data');
     const savedCurrentUser = localStorage.getItem('current-user');
@@ -145,14 +147,20 @@ clearPreviousData();
 if(document.querySelector('.in-main')){
     document.querySelector('.in-main')
         .innerHTML = `
-        <p>Hello, ${fullUser[enterUserName].name}</p>
-        <p>Current Balance</p>
-        <p>$${fullUser[enterUserName].balance}
-        
+        <div class="basic-details">
+            <p class="greeting">Hello, ${fullUser[enterUserName].name} 👋</p>
+            <div class="balance-text">Current Balance: </div>
+            <div class="current-balance">$${fullUser[enterUserName].balance}</div>
+        </div>
+        <hr>
+        <div class="action-buttons">
+            <button class="deposit-btn">Deposit</button>
+            <button class="withdraw-btn">Withdraw</button>
+        </div>
         <br>
         
-        <a href="index.html">Log out</a> 
+        <p class="log-out"><a href="index.html" >Log out</a></p>
         
         `;
         
-}
+};

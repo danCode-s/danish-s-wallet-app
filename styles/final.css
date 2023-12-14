@@ -8,6 +8,79 @@
     width: 45vh;
     margin-left: 5%;
     margin-top: 5%;
-    color: black
+    color: black;
+
+    border-radius: 20px;
+
+}
+
+.basic-details{
+    
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.greeting{
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.balance-text{
+    margin-top: 5%;
+    font-size: 25px;
+}
+.current-balance{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 43vh;
+   
+    margin-top: -11%;
+    text-align: right;
+
+    padding-right: 10%;
+    font-size: 40px;
+}
+.balance-text,
+.current-balance{
+    font-weight: bold;
+    
+}
+.action-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.action-buttons button{
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 3.2rem;
+    width: 12rem;
+    background-color: transparent;
+    border-radius: 30px;
+    margin: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.action-buttons button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.log-out{
+    text-align: center;
+    
+    
+}
+
+.log-out a{
+    text-decoration: underline;
+    font-size: 18px;
+    color: rgb(0,0,0,0.8);
+    font-weight: bold;
 }
 
