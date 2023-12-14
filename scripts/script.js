@@ -147,9 +147,12 @@ if(document.querySelector('.in-main')){
         .innerHTML = `
         <p>Hello, ${fullUser[enterUserName].name}</p>
         <p>Current Balance</p>
-        <p>$${fullUser[enterUserName].balance + 1.56}
+        <p>$${fullUser[enterUserName].balance}
         
         <br>
-        <a href="index.html">Log out</button> 
+        
+        <a href="index.html">Log out</a> 
+        
         `;
+        
 }
