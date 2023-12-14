@@ -164,3 +164,10 @@ body{
 .asker {
     margin-top: 2%;
 }
+.clear-btn{
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
