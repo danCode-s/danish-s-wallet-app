@@ -138,11 +138,21 @@ function clearPreviousData(){
     
 
 }
+
+
+// function deposit(amount){
+    Number(fullUser[enterUserName].balance + amount)
+// };
+// function withdraw(amount){
+    
+    
+// }
 generate();
 submit();   
 clearPreviousData();
             
-        
+
+
 
 if(document.querySelector('.in-main')){
     document.querySelector('.in-main')
@@ -153,9 +163,10 @@ if(document.querySelector('.in-main')){
             <div class="current-balance">$${fullUser[enterUserName].balance}</div>
         </div>
         <hr>
+        <p class="amount-enter"></p>
         <div class="action-buttons">
             <button class="deposit-btn">Deposit</button>
-            <button class="withdraw-btn">Withdraw</button>
+            <button class="withdraw-btn withdraw">Withdraw</button>
         </div>
         <br>
         
@@ -163,4 +174,33 @@ if(document.querySelector('.in-main')){
         
         `;
         
+};
+
+let amount;
+let clickCounter = 0;
+if(document.querySelector('.deposit-btn')){
+    document.querySelector('.deposit-btn')
+        .addEventListener('click', ()=>{
+           
+           if(clickCounter === 0){
+               document.querySelector('.amount-enter')
+                   .innerHTML = `<input placeholder="Enter Deposit Amount " class="deposit-input">` 
+                   clickCounter++;
+           }
+                if (document.querySelector('.deposit-input').value){
+                    amount = document.querySelector('.deposit-input').value; 
+                    console.log(amount)
+                    console.log();
+                }
+            });
+}    
+if(document.querySelector('.withdraw-btn')){
+        document.querySelector('.withdraw-btn')
+            .addEventListener('click', ()=>{
+                document.querySelector('.amount-enter')
+                    .innerHTML = `<input placeholder="Enter Withdraw Amount" class="deposit-input">` 
+            
+           
+            
+        })
 };
