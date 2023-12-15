@@ -140,13 +140,30 @@ function clearPreviousData(){
 }
 
 
-// function deposit(amount){
-    Number(fullUser[enterUserName].balance + amount)
-// };
-// function withdraw(amount){
+function deposit(amount){
+    fullUser[enterUserName].balance += Number(amount);
+    document.querySelector('.current-balance')
+        .innerHTML = `$${fullUser[enterUserName].balance}`;
+    saveDataToLocalStorage();
+    document.querySelector('.amount-enter')
+        .innerHTML = ``;
+
+    
+};
+function withdraw(amount){
+    if(fullUser[enterUserName].balance > 0 && fullUser[enterUserName].balance - Number(amount) >= 0){
+        fullUser[enterUserName].balance -= Number(amount);
+        document.querySelector('.current-balance')
+            .innerHTML = `$${fullUser[enterUserName].balance}`;
+        saveDataToLocalStorage();
+    } else {
+        alert("Invalid Amount")
+    };
+    document.querySelector('.amount-enter')
+        .innerHTML = ``;
     
     
-// }
+ };
 generate();
 submit();   
 clearPreviousData();
@@ -177,29 +194,38 @@ if(document.querySelector('.in-main')){
 };
 
 let amount;
-let clickCounter = 0;
+let clickCounter = 1;
 if(document.querySelector('.deposit-btn')){
     document.querySelector('.deposit-btn')
         .addEventListener('click', ()=>{
            
-           if(clickCounter === 0){
+           if(clickCounter){
                document.querySelector('.amount-enter')
-                   .innerHTML = `<input placeholder="Enter Deposit Amount " class="deposit-input">` 
-                   clickCounter++;
+                   .innerHTML = `<input placeholder="Enter Deposit Amount " class="deposit-input">`;
+                   
+                   amount = document.querySelector('.deposit-input').value; 
+                    deposit(amount);
+             
            }
-                if (document.querySelector('.deposit-input').value){
-                    amount = document.querySelector('.deposit-input').value; 
-                    console.log(amount)
-                    console.log();
-                }
+                
+                     
+                    
+                
             });
 }    
 if(document.querySelector('.withdraw-btn')){
         document.querySelector('.withdraw-btn')
             .addEventListener('click', ()=>{
-                document.querySelector('.amount-enter')
-                    .innerHTML = `<input placeholder="Enter Withdraw Amount" class="deposit-input">` 
-            
+                if(clickCounter === 0){
+                    document.querySelector('.amount-enter')
+                        .innerHTML = `<input placeholder="Enter Withdraw Amount " class="withdraw-input">` 
+                        clickCounter++;
+                }
+                     if (document.querySelector('.withdraw-input').value){
+                         amount = document.querySelector('.withdraw-input').value; 
+                         withdraw(amount);
+                         
+                    };
            
             
         })
