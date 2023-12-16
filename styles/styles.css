@@ -4,25 +4,28 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-*{
-    
+/* Base styles for non-responsive elements */
+* {
     overflow: hidden;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-
-    
 }
-body{
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-    
 
+body {
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
-.big-wrapper{
+
+.big-wrapper {
+    min-height: 70vh;
+    min-width: 50vh;
     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*
     margin-top: 5%;
     display: flex;
     align-items: center;
@@ -30,37 +33,37 @@ body{
     padding-top: 2vh;
     padding-bottom: 2vh;
     background-color: transparent;
-    
-    
-    
-    
-}
-.big-wrapper .main{
-    min-height: 60vh;
-    min-width: 50vh;
-    height: 50vh;
-    width: 50vh;
-    border: 1px solid black;
-    box-shadow: 20px 0px 15px black;
-    color: white;
-    
-    
+    */
     
 }
 
- .header-title {
+.big-wrapper .main {
+    color: white;
+    height: 60vh;
+    
+    box-shadow: 20px 0px 15px black;
+    width: 50vh;
+    /*
+    min-height: 70vh;
+    min-width: 50vh;
+    border: 1px solid black;
+    */
+    
+}
+
+.header-title {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     font-size: 40px;
-    font-family: 'Bebas neue', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
-    top: 5%;;
+    top: 5%;
 }
+
 .taker {
-    
     height: 70%;
     width: 90%;
     position: relative;
@@ -73,37 +76,34 @@ body{
     transition: all ease-in-out 0.3s;
     border-radius: 5px;
     
-    
-    
-   
-    
-}
-.taker:hover{
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px rgb(255, 255, 255) ;
 }
 
-.taker .asker{
+.taker:hover {
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+.taker .asker {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-.taker input{
+
+.taker input {
     height: 40px;
     width: 90%;
     background-color: white;
     border-radius: 20px;
     padding-left: 20px;
-    border:1px solid white;
-
+    border: 1px solid white;
 }
 
-.taker .submit-btn{
+.taker .submit-btn {
     font-weight: bold;
     background-color: transparent;
     height: 2.5rem;
     width: 8vh;
-    margin-left: 35%;
+    /* margin-left: 0%; */
     color: white;
     border: 1px solid white;
     margin-top: 5%;
@@ -113,11 +113,11 @@ body{
     margin-bottom: 20px;
 }
 
-.submit-btn:hover{
+.submit-btn:hover {
     border-radius: 30px;
     height: 3.5rem;
     width: 10vh;
-    margin-left: 33%;
+    margin-left: 0%;
     font-size: 18px;
     margin-bottom: 17px;
     color: black;
@@ -128,34 +128,30 @@ body{
 .taker .unpresent {
     font-size: 14px;
     margin-left: 20%;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
-.generate-btn{
-    
+.generate-btn {
     background-color: transparent;
     border: none;
-    transition: all ease-in-out 0.2s;   
-   
+    transition: all ease-in-out 0.2s;
 }
-.generate-btn a{
+
+.generate-btn a {
     color: white;
     font-family: 'Bebas Neue', sans-serif;
-    transition: all ease-in-out 0.2s;  
+    transition: all ease-in-out 0.2s;
     letter-spacing: 2px;
-    text-decoration: underline; 
+    text-decoration: underline;
 }
-.generate-btn a:hover{
+
+.generate-btn a:hover {
     color: white;
     font-size: 15px;
     color: pink;
-    
 }
-  
-    
 
-
-.arrow-back{
+.arrow-back {
     background-color: red;
     color: white;
     cursor: pointer;
@@ -164,7 +160,8 @@ body{
 .asker {
     margin-top: 2%;
 }
-.clear-btn{
+
+.clear-btn {
     border: none;
     background-color: transparent;
     color: white;
@@ -172,9 +169,44 @@ body{
     cursor: pointer;
 }
 
-.loading{
+.loading {
     margin-top: 5%;
     font-weight: bold;
     margin-bottom: 5%;
     text-align: center;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive styles for small screens */
+@media only screen and (max-width: 600px) {
+    .header-title{
+        font-size: 35px;
+    }
+    .big-wrapper .main {
+        width: 80%;
+        height:100%;
+        margin-right: 10%;
+    }
+
+    .taker {
+        top: 2%;
+        width: 100%;
+        height: 100;
+        left: 0;
+    }
+    .taker .unpresent {
+        text-align: center;
+        font-size: 12px;
+        
+    }
+    .taker .submit-btn {
+        margin-left:0;
+    }
+    .clear-btn{
+        margin-top: 0;
+    }
 }
