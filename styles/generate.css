@@ -1,18 +1,22 @@
+.big-wrapper .main{
+    height:  100%;
+    
+}
 .upper-body{
     
-    min-height: 50vh;
-    min-width: 40vh;
-    max-width: 47vh;
-    margin-top: 5%;
+    
+    width: 95%;
+    margin-top: 0%;
     margin-left: 3%;
     
     border-radius: 20px;
     padding-left: 30px;
     padding-right: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.3);
     cursor:default;
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    margin-bottom: 5%;
     
 }
 .upper-body p span{
@@ -23,7 +27,11 @@
 }
 
 .upper-body .center-p{
+    padding: 10px;
+    border-radius: 20px;
     text-align: center;
+    color: black;
+    background-color: white;
 }
 .upper-body p{
     font-size: 20px;
@@ -49,20 +57,30 @@
     border-radius: 10px;
 }
 
-
+.user-name{
+    margin-top: 0;
+}
 .new-generate-btn{
     cursor: pointer;
     color: white;
     font-weight: bold;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     border: 1px solid white;
     background-color: transparent;
     height: 2.5rem;
     padding: 10px;
-    margin-left: 15vh;
+    
     border-radius: 20px;
     transition: all ease-in-out 0.3s;
 }
+
+.gen-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .new-generate-btn:hover{
     background-color: white;
     color: black;
@@ -93,6 +111,33 @@
 }
 
 .user-name{
-    margin-top: 5%;
+
+    margin-top: 2%;
     margin-bottom: 2%;
 }
+
+@media only screen and (max-width: 600px) {
+    .big-wrapper .main{
+        
+        width: 100%;
+        font-size: 10px;
+
+    }
+    .upper-body{
+        margin-top: 0;
+        margin-right: 3%;
+        margin-bottom: 10px;
+        
+    }
+    .user-name{
+        margin-top: 0;
+    }
+    .small-wrapper input,
+    .first-name{
+        margin-top: 0;
+    }
+    .new-generate-btn{
+        margin-top: 2px;
+    }
+}
+    
