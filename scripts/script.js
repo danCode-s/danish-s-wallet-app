@@ -194,38 +194,54 @@ if(document.querySelector('.in-main')){
 };
 
 let amount;
-let clickCounter = 1;
+
 if(document.querySelector('.deposit-btn')){
     document.querySelector('.deposit-btn')
         .addEventListener('click', ()=>{
-           
-           if(clickCounter){
+            
                document.querySelector('.amount-enter')
                    .innerHTML = `<input placeholder="Enter Deposit Amount " class="deposit-input">`;
+                document.querySelector('.action-buttons')
+                    .innerHTML = `<button class="deposit-btn js-deposit">Deposit</button>`
+                    document.querySelector('.js-deposit')
+                    .addEventListener('click', () => {
+                        amount = document.querySelector('.deposit-input').value; 
+                        deposit(amount)
+                        document.querySelector('.action-buttons')
+                            .innerHTML = `
+                            <button class="deposit-btn">Deposit</button>
+                            <button class="withdraw-btn withdraw">Withdraw</button>`;
+                        
+                    });
+                    
+                
                    
-                   amount = document.querySelector('.deposit-input').value; 
-                    deposit(amount);
              
-           }
+           
                 
                      
                     
                 
             });
-}    
+}
 if(document.querySelector('.withdraw-btn')){
         document.querySelector('.withdraw-btn')
             .addEventListener('click', ()=>{
-                if(clickCounter === 0){
-                    document.querySelector('.amount-enter')
-                        .innerHTML = `<input placeholder="Enter Withdraw Amount " class="withdraw-input">` 
-                        clickCounter++;
-                }
-                     if (document.querySelector('.withdraw-input').value){
-                         amount = document.querySelector('.withdraw-input').value; 
-                         withdraw(amount);
-                         
-                    };
+                document.querySelector('.amount-enter')
+                .innerHTML = `<input placeholder="Enter Withdraw Amount " class="withdraw-input">`;
+             document.querySelector('.action-buttons')
+                 .innerHTML = `<button class="withdraw-btn js-withdraw">Withdraw</button>`
+                 document.querySelector('.js-withdraw')
+                    .addEventListener('click', () => {
+                        amount = document.querySelector('.withdraw-input').value; 
+                        withdraw(amount)
+                        document.querySelector('.action-buttons')
+                            .innerHTML = `
+                            <button class="deposit-btn">Deposit</button>
+                            <button class="withdraw-btn withdraw">Withdraw</button>
+                            `;
+                     
+                 });
            
             
         })
