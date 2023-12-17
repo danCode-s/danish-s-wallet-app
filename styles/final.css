@@ -3,6 +3,8 @@
 }
 
 .in-main{
+   display: flex;
+   justify-content: center;
     background-color: white;
     height: 50vh;
     width: 45vh;
@@ -30,14 +32,11 @@
     font-size: 25px;
 }
 .current-balance{
-    padding-top: 3%;
-    padding-bottom: 3%;
+    
+    padding: 5px;
     width: 43vh;
-   
-    margin-top: -11%;
-    text-align: right;
-
-    padding-right: 10%;
+   ;
+    
     font-size: 40px;
 }
 .balance-text,
@@ -84,3 +83,27 @@
     font-weight: bold;
 }
 
+.amount-enter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.amount-enter input{
+    width: 40vh;
+    margin-top: 10px;
+    border-radius: 20vh;
+    border: 1px solid black;
+    padding: 10px;
+    height: 3rem;
+
+}
+
+.action-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+
+
+}
