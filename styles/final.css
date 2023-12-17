@@ -103,7 +103,23 @@
     align-items: center;
     justify-content: center;
 }
+.main-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media only screen and (max-width: 600px) {
-
+    .action-buttons{
+        border-radius: 20%;
+    }
+    .in-main{
+       margin-bottom: 20px;
+        width: 40vh;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 8px;
+        
+        
+    }
 
 }
