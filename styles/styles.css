@@ -40,7 +40,7 @@ body {
 .big-wrapper .main {
     color: white;
     height: 60vh;
-    
+    border: 1px solid black;
     box-shadow: 20px 0px 15px black;
     width: 50vh;
     
@@ -190,6 +190,19 @@ body {
     align-items: center;
 }
 
+@media only screen and (max-height: 750px) {
+    .header-title{
+        font-size: 24px;
+    }
+    .big-wrapper .main{
+        
+        margin-top: 0;
+    }
+    .taker{
+        padding-top: 0;
+        margin-top: 0vh;
+    }
+}
 /* Responsive styles for small screens */
 @media only screen and (max-width: 600px) {
     .header-title{
@@ -199,6 +212,7 @@ body {
         width: 80%;
         height:100%;
         margin-right: 10%;
+        margin-bottom: 30px;
     }
 
     .taker {
@@ -206,6 +220,7 @@ body {
         width: 100%;
         height: 100;
         left: 0;
+        padding-top: 0;
         
     }
     .taker .unpresent {
