@@ -79,7 +79,7 @@ function submit(){
 
 function generate(){
     getSavedData();
-    console.log(fullUser);
+    // console.log(fullUser);
     if(document.querySelector('.small-wrapper')){
         document.querySelector('.new-generate-btn')
             .addEventListener('click', () => {
